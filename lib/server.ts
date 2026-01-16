@@ -1,18 +1,20 @@
-import { createServer, type Server } from "http";
-import { intializeApplication } from "./app";
-import { envConfig } from "./config/env";
+import { createServer, type Server } from 'http';
+import { intializeApplication } from './app';
+import { envConfig } from './config/env';
 
-const PORT = Number(envConfig.PORT) || 3000
-const application = intializeApplication()
+const PORT = Number(envConfig.PORT) || 3000;
+const application = intializeApplication();
 
+const applicationServer = createServer(application);
+const initializeServer = (server: Server) => {
+        server.listen(() => {
+                console.log(`server running on ${PORT}`);
+        });
+};
 
-
-
-
-const applicationServer = createServer(application)
-const initServer = (s: Server) => {
-    s.listen(() => {
-        console.log(`server running on ${PORT}`)
-    })
-}
-initServer(applicationServer)
+process.on('SIGTERM', () => {
+        applicationServer.close(() => {
+                process.exit(1);
+        });
+});
+initializeServer(applicationServer);
