@@ -1,8 +1,8 @@
-import * as input from '../types/requestTypes';
-import * as output from '../types/responseTypes';
-import { TaxHelpers } from '../helpers/logic/taxHelpers';
-import { Ai } from '@lib/config/Ai';
-import { buildAuditDocPrompt } from '../helpers/promptBuilders/buildAuditDocPrompt';
+import * as input from '../types/requestTypes.js';
+import * as output from '../types/responseTypes.js';
+import { TaxHelpers } from '../helpers/logic/taxHelpers.js';
+import { Ai } from '@lib/config/Ai.js';
+import { buildAuditDocPrompt } from '../helpers/promptBuilders/buildAuditDocPrompt.js';
 
 export class AuditDocumentReviewerService {
         static async execute(data: input.auditDocumentRequest): Promise<output.auditDocumentResponse> {

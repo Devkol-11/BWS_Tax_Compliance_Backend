@@ -1,9 +1,9 @@
-import * as input from '../types/requestTypes';
-import * as output from '../types/responseTypes';
-import * as Errors from '../../utils/appError';
-import { TaxHelpers } from '../helpers/logic/taxHelpers';
-import { Ai } from '@lib/config/Ai';
-import { buildTaxCalculationPrompt } from '../helpers/promptBuilders/buildTaxCalculationPrompt';
+import * as input from '../types/requestTypes.js';
+import * as output from '../types/responseTypes.js';
+import * as Errors from '../../utils/appError.js';
+import { TaxHelpers } from '../helpers/logic/taxHelpers.js';
+import { Ai } from '../../config/Ai.js';
+import { buildTaxCalculationPrompt } from '../helpers/promptBuilders/buildTaxCalculationPrompt.js';
 
 export class CalculateTaxLiabilityService {
         static async execute(data: input.calculateTaxRequest): Promise<output.CalculateTaxResponse> {

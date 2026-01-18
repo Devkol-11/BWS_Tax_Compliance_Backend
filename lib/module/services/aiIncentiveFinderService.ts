@@ -1,9 +1,9 @@
-import * as input from '../types/requestTypes';
-import * as output from '../types/responseTypes';
-import * as Errors from '../../utils/appError';
-import { TaxHelpers } from '../helpers/logic/taxHelpers';
-import { Ai } from '@lib/config/Ai';
-import { buildIncentiveFinderPrompt } from '../helpers/promptBuilders/buildIncentiveFinderPrompt';
+import * as input from '../types/requestTypes.js';
+import * as output from '../types/responseTypes.js';
+import * as Errors from '../../utils/appError.js';
+import { TaxHelpers } from '../helpers/logic/taxHelpers.js';
+import { Ai } from '../../config/Ai.js'
+import { buildIncentiveFinderPrompt } from '../helpers/promptBuilders/buildIncentiveFinderPrompt.js';
 
 export class AiIncentiveFinderService {
         static async execute(

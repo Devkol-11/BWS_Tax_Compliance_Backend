@@ -1,27 +1,33 @@
-import { httpStatusCode } from './httpStatusCodes';
+import { httpStatusCode } from './httpStatusCodes.js';
 
-export class AppError extends Error {
-        public readonly statusCode: number;
-        public readonly message: string;
+export abstract class BackendError extends Error {
+        abstract readonly kind: 'Business' | 'Infrastructure';
+}
+
+export class InfrastructureError extends BackendError {
+        readonly kind: 'Infrastructure' = 'Infrastructure';
+        readonly retryable: boolean;
+        readonly cause?: Error;
+
+        constructor(message: string, retryable: boolean, cause?: Error) {
+                super(message);
+                this.retryable = retryable;
+                this.cause = cause;
+        }
+}
+
+export class DomainError extends BackendError {
+        readonly kind: 'Business' = 'Business';
+        readonly statusCode: number;
 
         constructor(message: string, statusCode: number) {
                 super(message);
-                this.message = message;
                 this.statusCode = statusCode;
-                Object.setPrototypeOf(this, Error);
         }
 }
 
-export class InvalidRequestError extends AppError {
-        constructor(message: string, statusCode: number = httpStatusCode.BAD_REQUEST) {
+export class InvalidRequestError extends DomainError {
+        constructor(message: string, statusCode = httpStatusCode.BAD_REQUEST) {
                 super(message, statusCode);
-                Object.setPrototypeOf(this, AppError);
-        }
-}
-
-export class NotFoundError extends AppError {
-        constructor(message: string, statusCode: number = httpStatusCode.NOT_FOUND) {
-                super(message, statusCode);
-                Object.setPrototypeOf(this, AppError);
         }
 }

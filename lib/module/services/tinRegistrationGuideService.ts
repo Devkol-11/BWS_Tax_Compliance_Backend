@@ -1,7 +1,7 @@
-import * as input from '../types/requestTypes';
-import * as output from '../types/responseTypes';
-import { TaxHelpers } from '../helpers/logic/taxHelpers';
-import { Ai } from '@lib/config/Ai';
+import * as input from '../types/requestTypes.js';
+import * as output from '../types/responseTypes.js';
+import { TaxHelpers } from '../helpers/logic/taxHelpers.js';
+import { Ai } from '../../config/Ai.js';
 
 export class TinRegistrationGuideService {
         static async execute(data?: input.tinRegistrationRequest): Promise<output.tinRegistrationResponse> {

@@ -1,9 +1,9 @@
-import * as input from '../types/requestTypes';
-import * as output from '../types/responseTypes';
-import * as Errors from '../../utils/appError';
-import { TaxHelpers } from '../helpers/logic/taxHelpers';
-import { Ai } from '@lib/config/Ai';
-import { buildTaxScopePrompt } from '../helpers/promptBuilders/buildTaxScopePrompt';
+import * as input from '../types/requestTypes.js';
+import * as output from '../types/responseTypes.js';
+import * as Errors from '../../utils/appError.js';
+import { TaxHelpers } from '../helpers/logic/taxHelpers.js';
+import { Ai } from '../../config/Ai.js';
+import { buildTaxScopePrompt } from '../helpers/promptBuilders/buildTaxScopePrompt.js';
 
 export class AnalyzeTaxScopeService {
         static async execute(data: input.analyzeTaxScopeRequest): Promise<output.analyzeTaxScopeResponse> {

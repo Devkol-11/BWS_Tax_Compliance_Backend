@@ -1,13 +1,15 @@
 import Express from 'express';
-import { initilalizeTaxRoutes } from './module/routes/routes';
+import { initilalizeTaxRoutes } from './module/routes/routes.js';
 import helmet from 'helmet';
+import morgan from 'morgan';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
-import { globalErrorHandler } from './utils/globalErrorHandler';
+import { globalErrorHandler } from './utils/globalErrorHandler.js';
 
 export function intializeApplication() {
         const expressApplication = Express();
         const appRoutes = initilalizeTaxRoutes();
+        expressApplication.use(morgan('combined'));
         expressApplication.use(Express.json());
         expressApplication.use(helmet());
         expressApplication.use(cors({ allowedHeaders: '*' }));

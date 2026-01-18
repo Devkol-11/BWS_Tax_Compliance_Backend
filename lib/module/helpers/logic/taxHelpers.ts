@@ -1,4 +1,4 @@
-import * as T from '../../types/requestTypes';
+import * as T from '../../types/requestTypes.js';
 
 export class TaxHelpers {
         static classifyTaxPayerType(

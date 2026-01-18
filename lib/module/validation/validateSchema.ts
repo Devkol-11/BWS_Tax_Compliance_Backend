@@ -1,7 +1,7 @@
 import { ZodType } from 'zod';
 import { Request, Response, NextFunction } from 'express';
-import { HttpHelpers } from '@lib/utils/httpHelpers';
-import { httpStatusCode } from '@lib/utils/httpStatusCodes';
+import { HttpHelpers } from '../../utils/httpHelpers.js';
+import { httpStatusCode } from '../../utils/httpStatusCodes.js';
 
 export const validateRequest = (schema: ZodType) => (req: Request, res: Response, next: NextFunction) => {
         const result = schema.safeParse(req.body);

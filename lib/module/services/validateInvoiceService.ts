@@ -1,8 +1,8 @@
-import * as input from '../types/requestTypes';
-import * as output from '../types/responseTypes';
-import { TaxHelpers } from '../helpers/logic/taxHelpers';
-import { Ai } from '@lib/config/Ai';
-import { buildVatInvoicePrompt } from '../helpers/promptBuilders/buildVatInvoicePrompt';
+import * as input from '../types/requestTypes.js';
+import * as output from '../types/responseTypes.js';
+import { TaxHelpers } from '../helpers/logic/taxHelpers.js';
+import { Ai } from '../../config/Ai.js';
+import { buildVatInvoicePrompt } from '../helpers/promptBuilders/buildVatInvoicePrompt.js';
 
 export class ValidateInvoiceService {
         static async execute(data: input.validateInvoiceRequest): Promise<output.validateInvoiceResponse> {

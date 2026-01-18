@@ -1,18 +1,18 @@
 import { Router } from 'express';
-import { validateRequest, validateQuery } from '../validation/validateSchema';
-import { AnalyzeTaxScopeService } from '../services/analyzeTaxScopeService';
-import { CalculateTaxLiabilityService } from '../services/calculateTaxLiabilityService';
-import { OptimizeSavingsService } from '../services/optimizeSavingsService';
-import { ValidateInvoiceService } from '../services/validateInvoiceService';
-import { AiIncentiveFinderService } from '../services/aiIncentiveFinderService';
-import { NonResidentSepCheckService } from '../services/nonResidentSepCheckService';
-import { AuditDocumentReviewerService } from '../services/auditDocumentReviewerService';
-import { TinRegistrationGuideService } from '../services/tinRegistrationGuideService';
-import * as clientRequest from '../types/requestTypes';
-import * as clientResponse from '../types/responseTypes';
-import * as schema from '../validation/requestSchemas';
-import { httpStatusCode } from '@lib/utils/httpStatusCodes';
-import { HttpHelpers } from '../../utils/httpHelpers';
+import { validateRequest, validateQuery } from '../validation/validateSchema.js';
+import { AnalyzeTaxScopeService } from '../services/analyzeTaxScopeService.js';
+import { CalculateTaxLiabilityService } from '../services/calculateTaxLiabilityService.js';
+import { OptimizeSavingsService } from '../services/optimizeSavingsService.js';
+import { ValidateInvoiceService } from '../services/validateInvoiceService.js';
+import { AiIncentiveFinderService } from '../services/aiIncentiveFinderService.js';
+import { NonResidentSepCheckService } from '../services/nonResidentSepCheckService.js';
+import { AuditDocumentReviewerService } from '../services/auditDocumentReviewerService.js';
+import { TinRegistrationGuideService } from '../services/tinRegistrationGuideService.js';
+import * as clientRequest from '../types/requestTypes.js';
+import * as clientResponse from '../types/responseTypes.js';
+import * as schema from '../validation/requestSchemas.js';
+import { httpStatusCode } from '@lib/utils/httpStatusCodes.js';
+import { HttpHelpers } from '../../utils/httpHelpers.js';
 
 export function initilalizeTaxRoutes() {
         const taxRouter = Router();

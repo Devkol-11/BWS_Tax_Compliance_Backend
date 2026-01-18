@@ -1,8 +1,8 @@
-import * as input from '../types/requestTypes';
-import * as output from '../types/responseTypes';
-import { TaxHelpers } from '../helpers/logic/taxHelpers';
-import { Ai } from '@lib/config/Ai';
-import { buildSepCheckPrompt } from '../helpers//promptBuilders/buildSepCheckPrompt';
+import * as input from '../types/requestTypes.js';
+import * as output from '../types/responseTypes.js';
+import { TaxHelpers } from '../helpers/logic/taxHelpers.js';
+import { Ai } from '../../config/Ai.js';
+import { buildSepCheckPrompt } from '../helpers//promptBuilders/buildSepCheckPrompt.js';
 
 export class NonResidentSepCheckService {
         static async execute(data: input.nonResident_SEP_Request): Promise<output.nonResident_SEP_Response> {
